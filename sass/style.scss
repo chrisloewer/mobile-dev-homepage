@@ -1,5 +1,125 @@
 
-.section-one {
-	display: block; 
-	height: 50vh;
+// Colors
+
+$red-deep: #570F0A;
+
+
+// Mix-ins
+@mixin rotate($angle) {
+  -webkit-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  transform: rotate($angle);
+}
+
+@mixin skewY($angle) {
+  -webkit-transform: skewY($angle);
+  -moz-transform: skewY($angle);
+  -ms-transform: skewY($angle);
+  -o-transform: skewY($angle);
+  transform: skewY($angle);
+}
+
+@mixin skew($x, $y) {
+  -webkit-transform: skewY($y) skewX($x);
+  -moz-transform: skewY($y) skewX($x);
+  -ms-transform: skewY($y) skewX($x);
+  -o-transform: skewY($y) skewX($x);
+  transform: skewY($y) skewX($x);
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Chivo', sans-serif;
+}
+
+
+.top-nav-bar {
+  position: fixed;
+  z-index: 1;
+
+  .menu-icon {
+    width: 60px;
+    height: 60px;
+    margin: 25px 0 0 25px;
+    background: url('../resources/menu-white-ro.svg') no-repeat;
+  }
+  .menu-icon:hover {
+    background: url('../resources/menu-white.svg') no-repeat;
+    cursor: pointer;
+  }
+}
+
+.video-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  overflow: hidden;
+
+  video {
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  .filter {
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    //background-color: #000000;
+    //opacity: 0.6;
+    background-image: radial-gradient(
+      circle closest-side, transparentize(#000, .3) 70%, #618D96 73%
+    );
+  }
+}
+
+.splash-fullscreen {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+}
+
+.splash-fullscreen:before {
+  display: inline-block;
+  height: 100%;
+  content: '';
+  vertical-align: middle;
+}
+
+.splash-content {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 90%;
+  color: #FFFFFF;
+
+  h1 {
+    margin: 0;
+    font-size: 4em;
+  }
+}
+
+
+.section-bottom {
+  display: block;
+  height: 45vh;
+  background-color: $red-deep;
+  opacity: .9;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+  @include skewY(-25deg);
+  transform-origin: bottom right;
 }
