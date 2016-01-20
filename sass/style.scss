@@ -36,9 +36,27 @@ body {
   font-family: 'Chivo', sans-serif;
 }
 
+table {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: inline-table;
+  border-spacing: 0px;
+
+  tr:nth-child(2n) {
+    background-color: #DDDDDD;
+  }
+
+  td, th {
+    padding: 5px 10px;
+  }
+}
+
+a {
+  color: inherit;
+}
 
 .top-nav-bar {
-  position: fixed;
+  position: absolute;
   z-index: 1;
 
   .menu-icon {
@@ -71,21 +89,17 @@ body {
     top: 0;
     left: 0;
 
-    //background-color: #000000;
-    //opacity: 0.6;
-    background-image: radial-gradient(
-      circle closest-side, transparentize(#000, .3) 70%, #618D96 73%
-    );
+    background-color: transparentize(#000000, .4);
   }
 }
 
 .splash-fullscreen {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   position: relative;
   text-align: center;
-
+  color: #FFFFFF;
 }
 
 .splash-fullscreen:before {
@@ -99,27 +113,32 @@ body {
   display: inline-block;
   vertical-align: middle;
   max-width: 90%;
-  color: #FFFFFF;
 
   h1 {
-    margin: 0;
+    margin: 30px 0;
     font-size: 4em;
+  }
+
+  p {
+    max-width: 600px;
   }
 }
 
+.page-1 {
+  background-color: #FFFFFF;
+  color: #000000;
+}
 
-.section-bottom {
-  display: block;
-  height: 45vh;
-  background-color: $red-deep;
-  opacity: .9;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.portrait {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: #DDDDDD;
+  display: inline-block;
+  margin-bottom: 30px;
+}
 
-
-  @include skewY(-25deg);
-  transform-origin: bottom right;
+.spacer {
+  width: 100%;
+  height: 50px;
 }

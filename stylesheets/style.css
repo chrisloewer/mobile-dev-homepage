@@ -5,56 +5,78 @@ body {
   font-family: 'Chivo', sans-serif;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
+table {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: inline-table;
+  border-spacing: 0px;
+}
+/* line 45, ../sass/style.scss */
+table tr:nth-child(2n) {
+  background-color: #DDDDDD;
+}
+/* line 49, ../sass/style.scss */
+table td, table th {
+  padding: 5px 10px;
+}
+
+/* line 54, ../sass/style.scss */
+a {
+  color: inherit;
+}
+
+/* line 58, ../sass/style.scss */
 .top-nav-bar {
-  position: fixed;
+  position: absolute;
   z-index: 1;
 }
-/* line 44, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 .top-nav-bar .menu-icon {
   width: 60px;
   height: 60px;
   margin: 25px 0 0 25px;
   background: url("../resources/menu-white-ro.svg") no-repeat;
 }
-/* line 50, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .top-nav-bar .menu-icon:hover {
   background: url("../resources/menu-white.svg") no-repeat;
   cursor: pointer;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .video-container {
   height: 100vh;
   width: 100vw;
   position: fixed;
   overflow: hidden;
 }
-/* line 62, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .video-container video {
   min-height: 100%;
   min-width: 100%;
 }
-/* line 67, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 .video-container .filter {
   min-height: 100%;
   min-width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-image: radial-gradient(circle closest-side, rgba(0, 0, 0, 0.7) 70%, #618d96 73%);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 82, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 .splash-fullscreen {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   position: relative;
   text-align: center;
+  color: #FFFFFF;
 }
 
-/* line 91, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 .splash-fullscreen:before {
   display: inline-block;
   height: 100%;
@@ -62,34 +84,40 @@ body {
   vertical-align: middle;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 .splash-content {
   display: inline-block;
   vertical-align: middle;
   max-width: 90%;
-  color: #FFFFFF;
 }
-/* line 104, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 .splash-content h1 {
-  margin: 0;
+  margin: 30px 0;
   font-size: 4em;
 }
+/* line 122, ../sass/style.scss */
+.splash-content p {
+  max-width: 600px;
+}
 
-/* line 111, ../sass/style.scss */
-.section-bottom {
-  display: block;
-  height: 45vh;
-  background-color: #570F0A;
-  opacity: .9;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transform: skewY(-25deg);
-  -moz-transform: skewY(-25deg);
-  -ms-transform: skewY(-25deg);
-  -o-transform: skewY(-25deg);
-  transform: skewY(-25deg);
-  transform-origin: bottom right;
+/* line 127, ../sass/style.scss */
+.page-1 {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* line 132, ../sass/style.scss */
+.portrait {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: #DDDDDD;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* line 141, ../sass/style.scss */
+.spacer {
+  width: 100%;
+  height: 50px;
 }
