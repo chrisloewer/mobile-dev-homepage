@@ -1,46 +1,21 @@
 
 // Colors
-
-$red-deep: #570F0A;
-
-
-// Mix-ins
-@mixin rotate($angle) {
-  -webkit-transform: rotate($angle);
-  -moz-transform: rotate($angle);
-  -ms-transform: rotate($angle);
-  -o-transform: rotate($angle);
-  transform: rotate($angle);
-}
-
-@mixin skewY($angle) {
-  -webkit-transform: skewY($angle);
-  -moz-transform: skewY($angle);
-  -ms-transform: skewY($angle);
-  -o-transform: skewY($angle);
-  transform: skewY($angle);
-}
-
-@mixin skew($x, $y) {
-  -webkit-transform: skewY($y) skewX($x);
-  -moz-transform: skewY($y) skewX($x);
-  -ms-transform: skewY($y) skewX($x);
-  -o-transform: skewY($y) skewX($x);
-  transform: skewY($y) skewX($x);
-}
+$green-light: #E5F5D3;
+$blue-light: #B8D2D6;
 
 
 body {
   padding: 0;
   margin: 0;
   font-family: 'Chivo', sans-serif;
+  background-color: #333333;
 }
 
 table {
   border: 1px solid #000000;
   border-radius: 10px;
   display: inline-table;
-  border-spacing: 0px;
+  border-spacing: 0;
 
   tr:nth-child(2n) {
     background-color: #DDDDDD;
@@ -55,51 +30,21 @@ a {
   color: inherit;
 }
 
-.top-nav-bar {
-  position: absolute;
-  z-index: 1;
-
-  .menu-icon {
-    width: 60px;
-    height: 60px;
-    margin: 25px 0 0 25px;
-    background: url('../resources/menu-white-ro.svg') no-repeat;
-  }
-  .menu-icon:hover {
-    background: url('../resources/menu-white.svg') no-repeat;
-    cursor: pointer;
-  }
-}
-
-.video-container {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  overflow: hidden;
-
-  video {
-    min-height: 100%;
-    min-width: 100%;
-  }
-
-  .filter {
-    min-height: 100%;
-    min-width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    background-color: transparentize(#000000, .4);
-  }
-}
 
 .splash-fullscreen {
-  height: 100vh;
-  width: 100%;
+  height: 0;
+  width: 0;
   overflow: hidden;
   position: relative;
   text-align: center;
-  color: #FFFFFF;
+  color: #000000;
+  visibility: hidden;
+}
+
+.splash-fullscreen.current {
+  visibility: visible;
+  height: 100vh;
+  width: 100%;
 }
 
 .splash-fullscreen:before {
@@ -124,21 +69,31 @@ a {
   }
 }
 
-.page-1 {
-  background-color: #FFFFFF;
-  color: #000000;
+.pg-1 {
+  background-color: $green-light;
 }
 
-.portrait {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  background-color: #DDDDDD;
-  display: inline-block;
-  margin-bottom: 30px;
+.pg-2 {
+  background-color: $blue-light;
 }
 
-.spacer {
-  width: 100%;
-  height: 50px;
+
+// ------------------------- Animations ------------------------- //
+
+
+// Key Frames
+
+@keyframes scaleDown {
+  from {}
+  to {
+    opacity: 0;
+    transform: scale(0.7);
+  }
 }
+
+// Animation Classes
+
+.anim-scale-down {
+  animation: scaleDown 0.7s ease;
+}
+
