@@ -1,51 +1,52 @@
-/* line 7, ../sass/style.scss */
+/* line 8, ../sass/style.scss */
 body {
   padding: 0;
   margin: 0;
   font-family: 'Chivo', sans-serif;
   background-color: #333333;
+  overflow: hidden;
 }
 
-/* line 14, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 table {
   border: 1px solid #000000;
   border-radius: 10px;
   display: inline-table;
   border-spacing: 0;
 }
-/* line 20, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 table tr:nth-child(2n) {
   background-color: #DDDDDD;
 }
-/* line 24, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 table td, table th {
   padding: 5px 10px;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 a {
   color: inherit;
 }
 
-/* line 34, ../sass/style.scss */
+/* line 36, ../sass/style.scss */
 .splash-fullscreen {
-  height: 0;
-  width: 0;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
-  position: relative;
   text-align: center;
   color: #000000;
   visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-/* line 44, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .splash-fullscreen.current {
   visibility: visible;
-  height: 100vh;
-  width: 100%;
 }
 
-/* line 50, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .splash-fullscreen:before {
   display: inline-block;
   height: 100%;
@@ -53,30 +54,40 @@ a {
   vertical-align: middle;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 .splash-content {
   display: inline-block;
   vertical-align: middle;
   max-width: 90%;
 }
-/* line 62, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .splash-content h1 {
   margin: 30px 0;
   font-size: 4em;
 }
-/* line 67, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 .splash-content p {
   max-width: 600px;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
+.top {
+  z-index: 500;
+}
+
+/* line 79, ../sass/style.scss */
 .pg-1 {
   background-color: #E5F5D3;
 }
 
-/* line 76, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .pg-2 {
   background-color: #B8D2D6;
+}
+
+/* line 87, ../sass/style.scss */
+.pg-3 {
+  background-color: #E6D8E8;
 }
 
 @keyframes scaleDown {
@@ -85,7 +96,27 @@ a {
     transform: scale(0.7);
   }
 }
-/* line 96, ../sass/style.scss */
+@keyframes moveFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes moveFromRight {
+  from {
+    transform: translateX(100%);
+  }
+}
+/* line 120, ../sass/style.scss */
 .anim-scale-down {
   animation: scaleDown 0.7s ease;
+}
+
+/* line 124, ../sass/style.scss */
+.anim-move-from-left {
+  animation: moveFromLeft 0.6s ease;
+}
+
+/* line 128, ../sass/style.scss */
+.anim-move-from-right {
+  animation: moveFromRight 0.6s ease;
 }
