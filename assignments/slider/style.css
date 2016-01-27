@@ -1,0 +1,103 @@
+
+body {
+  font-family: 'Oswald', sans-serif;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+p {
+  text-indent: 20px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+table {
+  border: 1px solid #000000;
+  display: inline-table;
+  border-spacing: 0;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+tr:nth-child(2n) {
+  background-color: #DDDDDD;
+}
+
+td, th {
+  padding: 5px 8px;
+}
+
+td:nth-child(n+2) {
+  border-left: 1px solid black;
+}
+
+input[type=range] {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.nav-bar {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid black;
+}
+
+.nav-bar .button {
+  height: 100%;
+  background-color: #AAAAAA;
+  flex-grow: 1;
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.nav-bar .button::before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-bar .button.current {
+  background-color: #888888;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #EEEEEE;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: -10;
+}
+
+.page.current {
+  display: block;
+}
+
+.content {
+  margin-top: 80px;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.content .button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.content .table-container {
+  display: inline-block;
+  margin: 20px 0;
+}

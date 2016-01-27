@@ -1,6 +1,7 @@
 
 var currentPage = 1;
 var maxPage = null;
+var animLock = false;
 touches = {
   "touchstart": {"x":-1, "y":-1},
   "touchmove" : {"x":-1, "y":-1},
@@ -58,6 +59,7 @@ function touchHandler(e) {
               prevPage();
             }
           }
+          break;
         default:
           break;
       }
@@ -68,6 +70,9 @@ function touchHandler(e) {
 // ---------------------------------------- UTILITIES ---------------------------------------- //
 
 function nextPage() {
+  if (animLock == true) { return false; }
+
+  animLock = true;
   var initialPage = document.getElementById('pg_' + currentPage);
   var secondPage = null;
 
@@ -83,14 +88,19 @@ function nextPage() {
   secondPage.addEventListener('animationend', helper);
   function helper() {
     removeClass(this, 'anim-move-from-right');
+    animLock = false;
     this.removeEventListener('animationend', helper);
   }
 
   currentPage++;
+  return true;
 }
 
 
 function prevPage() {
+  if (animLock == true) { return false; }
+  animLock = true;
+
   var initialPage = document.getElementById('pg_' + currentPage);
   var secondPage = null;
 
@@ -108,10 +118,12 @@ function prevPage() {
   function helper() {
     removeClass(this, 'top');
     removeClass(this, 'anim-move-from-left');
+    animLock = false;
     this.removeEventListener('animationend', helper);
   }
 
   currentPage--;
+  return true;
 }
 
 function hidePage(element) {
