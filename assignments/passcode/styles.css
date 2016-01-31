@@ -1,0 +1,23 @@
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.keypad {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.keypad .row {
+    display: flex;
+}
+
+.keypad .row button {
+  flex-grow: 1;
+  width: 10%;
+  height: 40px;
+  margin: 10px;
+  background-color: #DDDDDD;
+  border: 1px solid black;
+}
