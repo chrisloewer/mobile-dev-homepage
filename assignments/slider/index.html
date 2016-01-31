@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Sliders</title>
+  <link rel="stylesheet" type="text/html" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="nav-bar">
+  <div class="button current" id="button_1">Intro</div>
+  <div class="button" id="button_2">Content</div>
+</div>
+
+
+<!-- Pages -->
+<div class="page current" id="pg_1">
+  <div class="content">
+    <h1>Introduction</h1>
+    <p>This is for mobile development.  The goal is to use two inputs to generate a times tables chart. Use the menu at the top of the screen to navigate the web page</p>
+    <p>Food truck lomo crucifix truffaut readymade pop-up chambray, aesthetic tacos austin schlitz blog. Literally locavore everyday carry disrupt, semiotics tousled direct trade brunch hoodie fingerstache. Hoodie tote bag tumblr, art party forage gentrify blue bottle direct trade you probably haven't heard of them. </p>
+  </div>
+</div>
+
+<div class="page" id="pg_2">
+  <div class="content">
+    <h1>Multiplication</h1>
+
+    <input id="num_1" type="range" min="1" max="7" step="1" onchange="addTable()"><br/>
+    <input id="num_2" type="range" min="1" max="15" step="1" onchange="addTable()">
+
+    <div class="button" onclick="removeTable()">Clear</div>
+
+    <br/>
+
+    <div class="table-container" id="table_container">
+
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
