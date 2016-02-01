@@ -6,6 +6,10 @@ body {
   font-weight: 300;
 }
 
+input[type=password] {
+  margin-bottom: 20px;
+}
+
 .keypad {
   margin: 0 auto;
   width: 300px;
@@ -24,6 +28,10 @@ body {
   border: 1px solid black;
 }
 
+.keypad .row button.large {
+  flex-grow: 3;
+}
+
 .page {
   display: none;
   position: absolute;
@@ -31,6 +39,7 @@ body {
   top: 0;
   height: 100vh;
   width: 100%;
+  background-color: #FFFFFF;
 }
 .page.current {
   display: block;
@@ -52,28 +61,22 @@ body {
 
 .page p {
   width: 80%;
-  margin: 0 auto;
+  margin: 70px auto 0 auto;
+  line-height: 1.5;
 }
-
-#pg_info {
-  background-color: #E5F5D3;
-}
-
-#pg_about {
-  background-color: #B8D2D6;
-}
-
 
 /* ------------------------------------ ANIMATIONS ------------------------------------ */
 
 @keyframes moveFromBottom {
   from {
+    background-color: #333333;
     transform: translateY(100%);
   }
 }
 @keyframes moveToBottom {
   from {}
   to {
+    background-color: #333333;
     transform: translateY(100%);
   }
 }

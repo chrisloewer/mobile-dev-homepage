@@ -1,6 +1,31 @@
 
 
+// ------------------------------------ PASSWORD FUNCTIONALITY -------------------------------- //
 
+var inp_pw = '';
+var PASSWORD = '4569';
+
+function keyPress(num) {
+  inp_pw += num;
+  document.getElementById('pw_field').value += '*';
+
+  if(inp_pw == PASSWORD) {
+    logIn();
+  }
+  else {
+    return false;
+  }
+}
+
+function clearPW() {
+  inp_pw = '';
+  document.getElementById('pw_field').value = '';
+}
+
+function logIn() {
+  showPage('pg_logged-in');
+  clearPW();
+}
 
 // ------------------------------------ PAGE SCROLL UTILITIES --------------------------------- //
 
@@ -12,7 +37,7 @@ function showPage(pageId) {
   page.addEventListener('animationend', animHelper);
 
   function animHelper() {
-    removeClass(this, 'anim-out');
+    removeClass(this, 'anim-in');
     this.removeEventListener('animationend',animHelper);
   }
 }
@@ -29,7 +54,6 @@ function reset() {
   removeClass(this, 'anim-out');
   this.removeEventListener('animationend', reset);
 }
-
 
 // ------------------------------------ GENERAL UTILITIES ------------------------------------ //
 
