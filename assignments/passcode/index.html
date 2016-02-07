@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Password Pad</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript" src="scripts.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Enter Pin</h1>
+
+<input title="password" type="password" id="pw_field">
+
+<div class="keypad">
+  <div class="row">
+    <button onclick="showPage('pg_info')">Info</button>
+    <button onclick="showPage('pg_about')">About</button>
+  </div>
+  <div class="row">
+    <button onclick="keyPress('1')">1</button>
+    <button onclick="keyPress('2')">2</button>
+    <button onclick="keyPress('3')">3</button>
+  </div>
+  <div class="row">
+    <button onclick="keyPress('4')">4</button>
+    <button onclick="keyPress('5')">5</button>
+    <button onclick="keyPress('6')">6</button>
+  </div>
+  <div class="row">
+    <button onclick="keyPress('7')">7</button>
+    <button onclick="keyPress('8')">8</button>
+    <button onclick="keyPress('9')">9</button>
+  </div>
+  <div class="row">
+    <button onclick="keyPress('0')">0</button>
+    <button class="large" onclick="clearPW()">CLR</button>
+  </div>
+</div>
+
+
+<div class="page" id="pg_info">
+
+  <div class="back-button" onclick="hidePage('pg_info')">
+    <img src="back-arrow.svg">
+  </div>
+
+    <h2>Info</h2>
+    <p>In order to log in successfully, enter the correct 4 digit pin number for your user.  In this test case the passcode is '4569' </p>
+
+</div>
+
+
+<div class="page" id="pg_about">
+  <div class="back-button" onclick="hidePage('pg_about')">
+    <img src="back-arrow.svg">
+  </div>
+
+  <h2>About</h2>
+
+  <p>Next level green juice knausgaard semiotics. Wolf cronut hella next level, single-origin coffee ethical deep v letterpress gluten-free kitsch wayfarers 8-bit plaid. Before they sold out chillwave normcore bicycle rights, lumbersexual ethical food truck. </p>
+
+</div>
+
+
+<div class="page" id="pg_logged-in">
+  <div class="back-button" onclick="hidePage('pg_logged-in')">
+    <img src="back-arrow.svg">
+  </div>
+
+  <h2>Logged in</h2>
+
+  <p>Log in successful.</p>
+
+</div>
+
+</body>
+</html>
