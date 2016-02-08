@@ -1,15 +1,16 @@
 
 // Colors
-$green-light: #915A7A;
-$blue-light: #499AAA;
-$pink-light: #E6D8E8;
+$color-one: #9CDBCD;
+$color-two: #BDB5E8;
+$color-three: #DBB0AB;
+//$pink-light: #BF5849;
 
 
 body {
   padding: 0;
   margin: 0;
   font-family: 'Chivo', sans-serif;
-  color: #FFFFFF;
+  //color: #FFFFFF;
   background-color: #333333;
 }
 
@@ -85,15 +86,15 @@ h1 {
 }
 
 .pg-1 {
-  background-color: $green-light;
+  background-color: $color-one;
 }
 
 .pg-2 {
-  background-color: $blue-light;
+  background-color: $color-two;
 }
 
 .pg-3 {
-  background-color: $pink-light;
+  background-color: $color-three;
 }
 
 
