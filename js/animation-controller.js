@@ -59,6 +59,14 @@ function touchHandler(e) {
               prevPage();
             }
           }
+
+          // Reset
+          touches = {
+            "touchstart": {"x":-1, "y":-1},
+            "touchmove" : {"x":-1, "y":-1},
+            "touchend"  : false,
+            "direction" : "undetermined"
+          };
           break;
         default:
           break;
@@ -70,9 +78,10 @@ function touchHandler(e) {
 // ---------------------------------------- UTILITIES ---------------------------------------- //
 
 function nextPage() {
+  console.log('nextPage() : ' + animLock);
+
   if (animLock == true) { return false; }
 
-  animLock = true;
   var initialPage = document.getElementById('pg_' + currentPage);
   var secondPage = null;
 
@@ -81,15 +90,18 @@ function nextPage() {
   }
   else { return false; }
 
+  animLock = true;
   hidePage(initialPage);
   addClass(secondPage, 'current');
   addClass(secondPage, 'anim-move-from-right');
-
   secondPage.addEventListener('animationend', helper);
+
   function helper() {
+    this.removeEventListener('animationend', helper);
     removeClass(this, 'anim-move-from-right');
     animLock = false;
-    this.removeEventListener('animationend', helper);
+
+    console.log('nextPage helper() end : ' + animLock);
   }
 
   currentPage++;
@@ -98,8 +110,9 @@ function nextPage() {
 
 
 function prevPage() {
+  console.log('prevPage() : ' + animLock);
+
   if (animLock == true) { return false; }
-  animLock = true;
 
   var initialPage = document.getElementById('pg_' + currentPage);
   var secondPage = null;
@@ -109,17 +122,20 @@ function prevPage() {
   }
   else { return false; }
 
+  animLock = true;
   hidePage(initialPage);
   addClass(secondPage, 'top');
   addClass(secondPage, 'current');
   addClass(secondPage, 'anim-move-from-left');
-
   secondPage.addEventListener('animationend', helper);
+
   function helper() {
-    removeClass(this, 'top');
-    removeClass(this, 'anim-move-from-left');
-    animLock = false;
     this.removeEventListener('animationend', helper);
+    removeClass(this, 'anim-move-from-left');
+    removeClass(this, 'top');
+    animLock = false;
+
+    console.log('prevPage helper() end : ' + animLock);
   }
 
   currentPage--;
@@ -132,42 +148,13 @@ function hidePage(element) {
 }
 
 function reset() {
-  console.log('reset called');
+  //console.log('reset called');
 
   removeClass(this, 'current');
-  removeClass(this, 'anim-move-from-right');
   removeClass(this, 'anim-scale-down');
-
+  removeClass(this, 'anim-move-from-right');
 
   this.removeEventListener('animationend', reset);
 }
 
 
-// ------------------------------------ GENERAL UTILITIES ------------------------------------ //
-
-function addClass(element, className) {
-  if(element.classList.contains(className)) {
-    console.log(className + ' already in classList');
-  }
-  else {
-    element.classList.add(className);
-  }
-}
-
-function removeClass(element, className) {
-  if(element.classList.contains(className)) {
-    element.classList.remove(className);
-  }
-  else {
-    console.log(className + ' not in classList');
-  }
-}
-
-function toggleClass(element, className) {
-  if(element.classList.contains(className)) {
-    element.classList.remove(className);
-  }
-  else {
-    element.classList.add(className);
-  }
-}
