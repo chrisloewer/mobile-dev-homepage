@@ -1,52 +1,66 @@
-/* line 8, ../sass/style.scss */
+/* line 9, ../sass/style.scss */
 body {
   padding: 0;
   margin: 0;
   font-family: 'Chivo', sans-serif;
   background-color: #333333;
-  overflow: hidden;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 17, ../sass/style.scss */
 table {
   border: 1px solid #000000;
   border-radius: 10px;
   display: inline-table;
   border-spacing: 0;
 }
-/* line 22, ../sass/style.scss */
+/* line 23, ../sass/style.scss */
 table tr:nth-child(2n) {
   background-color: #DDDDDD;
 }
-/* line 26, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 table td, table th {
   padding: 5px 10px;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 a {
   color: inherit;
 }
 
 /* line 36, ../sass/style.scss */
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+/* line 41, ../sass/style.scss */
+.button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 20px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* line 51, ../sass/style.scss */
 .splash-fullscreen {
   height: 100vh;
   width: 100%;
   overflow: hidden;
   text-align: center;
-  color: #000000;
   visibility: hidden;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 .splash-fullscreen.current {
   visibility: visible;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 .splash-fullscreen:before {
   display: inline-block;
   height: 100%;
@@ -54,46 +68,41 @@ a {
   vertical-align: middle;
 }
 
-/* line 60, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .splash-content {
   display: inline-block;
   vertical-align: middle;
   max-width: 90%;
 }
-/* line 65, ../sass/style.scss */
-.splash-content h1 {
-  margin: 30px 0;
-  font-size: 4em;
-}
-/* line 70, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .splash-content p {
   max-width: 600px;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .top {
   z-index: 500;
 }
 
-/* line 79, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .pg-1 {
-  background-color: #E5F5D3;
+  background-color: #9CDBCD;
 }
 
-/* line 83, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 .pg-2 {
-  background-color: #B8D2D6;
+  background-color: #BDB5E8;
 }
 
-/* line 87, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 .pg-3 {
-  background-color: #E6D8E8;
+  background-color: #DBB0AB;
 }
 
 @keyframes scaleDown {
   to {
     opacity: 0;
-    transform: scale(0.7);
+    transform: scale(0.85);
   }
 }
 @keyframes moveFromLeft {
@@ -106,17 +115,17 @@ a {
     transform: translateX(100%);
   }
 }
-/* line 120, ../sass/style.scss */
+/* line 129, ../sass/style.scss */
 .anim-scale-down {
   animation: scaleDown 0.7s ease;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .anim-move-from-left {
   animation: moveFromLeft 0.6s ease;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .anim-move-from-right {
   animation: moveFromRight 0.6s ease;
 }

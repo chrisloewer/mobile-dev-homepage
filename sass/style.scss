@@ -1,19 +1,20 @@
 
 // Colors
-$green-light: #E5F5D3;
-$blue-light: #B8D2D6;
-$pink-light: #E6D8E8;
+$color-one: #9CDBCD;
+$color-two: #BDB5E8;
+$color-three: #DBB0AB;
+//$pink-light: #BF5849;
 
 
 body {
   padding: 0;
   margin: 0;
   font-family: 'Chivo', sans-serif;
+  //color: #FFFFFF;
   background-color: #333333;
-  overflow: hidden;
 }
 
-table {
+table{
   border: 1px solid #000000;
   border-radius: 10px;
   display: inline-table;
@@ -32,13 +33,26 @@ a {
   color: inherit;
 }
 
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 20px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
 
 .splash-fullscreen {
   height: 100vh;
   width: 100%;
   overflow: hidden;
   text-align: center;
-  color: #000000;
   visibility: hidden;
 
   position: absolute;
@@ -62,11 +76,6 @@ a {
   vertical-align: middle;
   max-width: 90%;
 
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-  }
-
   p {
     max-width: 600px;
   }
@@ -77,15 +86,15 @@ a {
 }
 
 .pg-1 {
-  background-color: $green-light;
+  background-color: $color-one;
 }
 
 .pg-2 {
-  background-color: $blue-light;
+  background-color: $color-two;
 }
 
 .pg-3 {
-  background-color: $pink-light;
+  background-color: $color-three;
 }
 
 
@@ -99,7 +108,7 @@ a {
   from {}
   to {
     opacity: 0;
-    transform: scale(0.7);
+    transform: scale(0.85);
   }
 }
 

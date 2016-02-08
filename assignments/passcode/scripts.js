@@ -75,12 +75,3 @@ function removeClass(element, className) {
   }
 }
 
-// Adds leading zeros if necessary
-function padInt(int, len){
-  var str = int + '';
-  while (str.length < len) {
-    str = '0' + str;
-  }
-  return str;
-}
-
