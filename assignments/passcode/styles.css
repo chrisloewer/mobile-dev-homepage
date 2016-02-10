@@ -1,0 +1,177 @@
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+}
+
+input[type=password] {
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------ KEY PAD --------------------------------------- */
+
+.keypad {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.keypad .row {
+    display: flex;
+}
+
+.keypad .row button {
+  flex-grow: 1;
+  width: 10%;
+  height: 40px;
+  margin: 10px;
+  background-color: #DDDDDD;
+  border: 1px solid black;
+}
+
+.keypad .row button.large {
+  flex-grow: 3;
+}
+
+/* ------------------------------------ PAGES (POPUPS) -------------------------------- */
+
+.page {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.page.current {
+  display: block;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.back-button img {
+  display: block;
+  height: 20px;
+}
+
+.page p {
+  width: 80%;
+  margin: 70px auto 0 auto;
+  line-height: 1.5;
+}
+
+/* ------------------------------------ LIST COMPONENT -------------------------------- */
+
+.header {
+  text-align: left;
+
+}
+.header button {
+  margin: 10px 20px;
+}
+.header button:last-of-type {
+  float: right;
+}
+
+table {
+  margin: 10px auto;
+  border-spacing: 25px;
+}
+
+td {
+  min-width: 100px;
+  vertical-align: top;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 0;
+  margin: 20px;
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #BBBBBB;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #999999;
+}
+button:active {
+  background-color: #777777;
+}
+
+.list-container {
+  width: 90%;
+  margin: 10px auto;
+}
+.list-container .item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: left;
+  cursor: pointer;
+}
+
+textarea {
+  width: 70%;
+  resize: vertical;
+  max-height: 100px;
+  padding: 10px;
+  font: inherit;
+}
+
+/* ------------------------------------ ANIMATIONS ------------------------------------ */
+
+@keyframes moveFromBottom {
+  from {
+    background-color: #333333;
+    transform: translateY(100%);
+  }
+}
+@keyframes moveToBottom {
+  from {}
+  to {
+    background-color: #333333;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    background-color: #333333;
+    transform: scale(0);
+  }
+}
+
+@keyframes scaleOut {
+  from {}
+  to {
+    background-color: #BBBBBB;
+    transform: scale(0);
+  }
+}
+
+.anim-in {
+  animation: moveFromBottom 0.3s ease-out;
+}
+
+.anim-out {
+  animation: moveToBottom 0.3s ease;
+}
+
+.anim-in-popup {
+  animation: scaleIn 0.2s ease-out;
+}
+
+.anim-out-popup {
+  animation: scaleOut 0.2s ease-in;
+}

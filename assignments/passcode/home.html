@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>ToDo List</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript" src="scripts.js"></script>
+  <script type="text/javascript" src="list.js"></script>
+  <script type="text/javascript" src="../../js/general-utilities.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Chivo:400,900' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="header">
+  <button id="log_out_button">Log Out</button>
+  <button onclick="showPage('pg_profile')">Profile</button>
+
+</div>
+
+<h2>Add Item</h2>
+
+<textarea title="Add Item" id="text_field"></textarea>
+<br/>
+<button id="add_button">Add</button>
+
+<h2>ToDo List</h2>
+
+<div class="list-container" id="list_container"></div>
+
+<!-- Hidden Pages -->
+<div class="page" id="pg_edit">
+  <div class="back-button" onclick="hidePopup('pg_edit')">
+    <img src="back-arrow.svg">
+  </div>
+
+  <h2>Edit</h2>
+
+  <p>Edit selected item.</p>
+
+  <textarea title="Edit Field" id="edit_field"></textarea>
+  <br/>
+  <button id="edit_button">Save</button>
+  <br/>
+  <button id="delete_button">Delete</button>
+
+</div>
+
+<div class="page" id="pg_profile">
+
+  <div class="back-button" onclick="hidePage('pg_profile')">
+    <img src="back-arrow.svg">
+  </div>
+
+  <h2>Profile</h2>
+
+  <table>
+  <tr>
+    <td>Name:</td>
+    <td><input title="name" type="text" id="usr_name"></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input title="password" type="number" id="usr_password"></td>
+  </tr>
+  </table>
+
+  <button id="update_profile_button">Update</button>
+
+</div>
+
+</body>
+</html>
