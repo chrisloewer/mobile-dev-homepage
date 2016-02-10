@@ -1,9 +1,14 @@
 
+window.onload = function () {
+  if(localStorage.loggedIn == 'true') {
+    window.location.href = 'home.html';
+  }
+};
 
 // ------------------------------------ PASSWORD FUNCTIONALITY -------------------------------- //
 
 var inp_pw = '';
-var PASSWORD = '4569';
+var PASSWORD = localStorage.getItem('password') != null ? localStorage.getItem('password') : '4569';
 
 function keyPress(num) {
   inp_pw += num;
@@ -25,6 +30,11 @@ function clearPW() {
 function logIn() {
   showPage('pg_logged-in');
   clearPW();
+}
+
+function goToList() {
+  localStorage.setItem('loggedIn', true);
+  window.location.href = 'home.html';
 }
 
 // ------------------------------------ PAGE SCROLL UTILITIES --------------------------------- //

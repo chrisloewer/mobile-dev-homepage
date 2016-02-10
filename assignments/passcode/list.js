@@ -83,10 +83,21 @@ function Controller() {
 var controller = new Controller();
 var storageComponent = new Observer();
 var listComponent = new Observer();
+var profileComponent = new Observer();
 
 window.onload = function() {
+
+  if(localStorage.loggedIn != 'true') {
+    window.location.href = 'index.html';
+  }
+  document.getElementById('log_out_button').addEventListener('click', function() {
+    localStorage.loggedIn = 'false';
+    window.location.href = 'index.html';
+  });
+
   controller.attachObserver(storageComponent);
   controller.attachObserver(listComponent);
+  controller.attachObserver(profileComponent);
 
   // get stored data, if any exists, otherwise load as normal
   if( !storageComponent.updateController() ) {
@@ -188,12 +199,13 @@ window.onload = function() {
     }
 
     init();
-    if (args.list !== void 0) {
+    if (args.list != null) {
       list = args.list;
       redraw();
     }
     else {
-      console.log('Error retrieving list.');
+      list = [];
+      console.log('List not updated.');
     }
 
     return true;
@@ -222,14 +234,26 @@ window.onload = function() {
     if (args === void 0) {
       args = {};
     }
-    // console.log('storageComponent Observer update called');
-    localStorage.setItem('data', JSON.stringify(args));
+
+    if(args.list) {
+      localStorage.setItem('list', JSON.stringify(args.list));
+    }
+    if(args.user) {
+      localStorage.setItem('user', args.user);
+    }
+    if(args.password) {
+      localStorage.setItem('password', args.password);
+    }
   };
 
   // Used to let controller know stored values
   storageComponent.updateController = function() {
     try {
-      var data = JSON.parse(localStorage.getItem('data'));
+      var data = {
+        'list': JSON.parse(localStorage.getItem('list')),
+        'user': localStorage.getItem('user'),
+        'password': localStorage.getItem('password')
+       };
       if (data) {
         controller.updateObservers(data);
         return true;
@@ -241,5 +265,50 @@ window.onload = function() {
 
     return false;
   }
+
+})();
+
+
+// ------------------------------------- PROFILE COMPONENT ------------------------------------------ //
+
+(function() {
+
+  var user;
+  var password;
+
+  function init() {
+    document.getElementById('update_profile_button').addEventListener('click', updateProfile);
+  }
+
+  function updateProfile() {
+    hidePage('pg_profile');
+    profileComponent.updateController();
+  }
+
+  profileComponent.toString = function() {
+    return 'profileComponent Observer';
+  };
+
+  profileComponent.update = function(args) {
+    if (args === void 0) {
+      args = {};
+    }
+
+    init();
+
+    user = args.user != null ? args.user : 'Default';
+    password = args.password != null ? args.password : '4569';
+
+    document.getElementById('usr_name').value = user;
+    document.getElementById('usr_password').value = password;
+  };
+
+  profileComponent.updateController = function () {
+    var data = {
+      'user': document.getElementById('usr_name').value,
+      'password': document.getElementById('usr_password').value
+    };
+    controller.updateObservers(data);
+  };
 
 })();

@@ -14,8 +14,8 @@
 <body>
 
 <div class="header">
-  <button>Log Out</button>
-  <button>Profile</button>
+  <button id="log_out_button">Log Out</button>
+  <button onclick="showPage('pg_profile')">Profile</button>
 
 </div>
 
@@ -47,6 +47,28 @@
 
 </div>
 
+<div class="page" id="pg_profile">
+
+  <div class="back-button" onclick="hidePage('pg_profile')">
+    <img src="back-arrow.svg">
+  </div>
+
+  <h2>Profile</h2>
+
+  <table>
+  <tr>
+    <td>Name:</td>
+    <td><input title="name" type="text" id="usr_name"></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input title="password" type="number" id="usr_password"></td>
+  </tr>
+  </table>
+
+  <button id="update_profile_button">Update</button>
+
+</div>
 
 </body>
 </html>
