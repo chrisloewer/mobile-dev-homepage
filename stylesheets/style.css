@@ -1,4 +1,4 @@
-/* line 9, ../sass/style.scss */
+/* line 8, ../sass/style.scss */
 body {
   padding: 0;
   margin: 0;
@@ -6,34 +6,34 @@ body {
   background-color: #333333;
 }
 
-/* line 17, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 table {
   border: 1px solid #000000;
   border-radius: 10px;
   display: inline-table;
   border-spacing: 0;
 }
-/* line 23, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 table tr:nth-child(2n) {
   background-color: #DDDDDD;
 }
-/* line 27, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 table td, table th {
   padding: 5px 10px;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 a {
   color: inherit;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 h1 {
   font-size: 42px;
   text-transform: uppercase;
 }
 
-/* line 41, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 .button {
   display: inline-block;
   text-decoration: none;
@@ -43,7 +43,7 @@ h1 {
   border-radius: 10px;
 }
 
-/* line 51, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .splash-fullscreen {
   height: 100vh;
   width: 100%;
@@ -55,12 +55,12 @@ h1 {
   top: 0;
 }
 
-/* line 63, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 .splash-fullscreen.current {
   visibility: visible;
 }
 
-/* line 67, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .splash-fullscreen:before {
   display: inline-block;
   height: 100%;
@@ -68,33 +68,33 @@ h1 {
   vertical-align: middle;
 }
 
-/* line 74, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 .splash-content {
   display: inline-block;
   vertical-align: middle;
   max-width: 90%;
 }
-/* line 79, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .splash-content p {
   max-width: 600px;
 }
 
-/* line 84, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .top {
   z-index: 500;
 }
 
-/* line 88, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 .pg-1 {
   background-color: #9CDBCD;
 }
 
-/* line 92, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .pg-2 {
   background-color: #BDB5E8;
 }
 
-/* line 96, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 .pg-3 {
   background-color: #DBB0AB;
 }
@@ -115,17 +115,17 @@ h1 {
     transform: translateX(100%);
   }
 }
-/* line 129, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 .anim-scale-down {
   animation: scaleDown 0.7s ease;
 }
 
-/* line 133, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .anim-move-from-left {
   animation: moveFromLeft 0.6s ease;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 .anim-move-from-right {
   animation: moveFromRight 0.6s ease;
 }

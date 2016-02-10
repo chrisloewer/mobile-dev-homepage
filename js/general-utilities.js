@@ -28,6 +28,12 @@ function toggleClass(element, className) {
   }
 }
 
+function removeChildNodes(element) {
+  while(element.hasChildNodes()) {
+    element.removeChild(element.firstChild);
+  }
+}
+
 // Adds leading zeros if necessary
 function padInt(int, len){
   var str = int + '';
@@ -36,4 +42,3 @@ function padInt(int, len){
   }
   return str;
 }
-

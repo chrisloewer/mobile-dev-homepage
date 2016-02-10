@@ -82,39 +82,3 @@ function goToPage(n) {
 
   currentPage = n;
 }
-
-
-// ------------------------------------ GENERAL UTILITIES ------------------------------------ //
-
-function addClass(element, className) {
-  if(element.classList.contains(className)) {
-    // console.log(className + ' already in classList');
-  }
-  else {
-    element.classList.add(className);
-  }
-}
-
-function removeClass(element, className) {
-  if(element.classList.contains(className)) {
-    element.classList.remove(className);
-  }
-  else {
-    // console.log(className + ' not in classList');
-  }
-}
-
-function toggleClass(element, className) {
-  if(element.classList.contains(className)) {
-    element.classList.remove(className);
-  }
-  else {
-    // element.classList.add(className);
-  }
-}
-
-function removeChildNodes(element) {
-  while(element.hasChildNodes()) {
-    element.removeChild(element.firstChild);
-  }
-}
