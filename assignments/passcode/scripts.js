@@ -45,33 +45,38 @@ function showPage(pageId) {
 function hidePage(pageId) {
   var page = document.getElementById(pageId);
   addClass(page, 'anim-out');
-  page.addEventListener('animationend', reset);
+  page.addEventListener('animationend', resetPage);
 }
 
-function reset() {
+function resetPage() {
   removeClass(this, 'current');
   removeClass(this, 'anim-in');
   removeClass(this, 'anim-out');
-  this.removeEventListener('animationend', reset);
+  this.removeEventListener('animationend', resetPage);
 }
 
-// ------------------------------------ GENERAL UTILITIES ------------------------------------ //
+function showPopup(pageId) {
+  var page = document.getElementById(pageId);
 
-function addClass(element, className) {
-  if(element.classList.contains(className)) {
-    // console.log(className + ' already in classList');
-  }
-  else {
-    element.classList.add(className);
-  }
-}
+  addClass(page, 'current');
+  addClass(page, 'anim-in-popup');
+  page.addEventListener('animationend', animHelper);
 
-function removeClass(element, className) {
-  if(element.classList.contains(className)) {
-    element.classList.remove(className);
-  }
-  else {
-    // console.log(className + ' not in classList');
+  function animHelper() {
+    removeClass(this, 'anim-in-popup');
+    this.removeEventListener('animationend',animHelper);
   }
 }
 
+function hidePopup(pageId) {
+  var page = document.getElementById(pageId);
+  addClass(page, 'anim-out-popup');
+  page.addEventListener('animationend', resetPopup);
+}
+
+function resetPopup() {
+  removeClass(this, 'current');
+  removeClass(this, 'anim-in-popup');
+  removeClass(this, 'anim-out-popup');
+  this.removeEventListener('animationend', resetPopup);
+}
